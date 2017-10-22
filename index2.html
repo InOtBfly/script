@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+    <title>Formulario de incidencia</title>
+</head>
+
+<body>
+    <h2 class="content-head is-center">Contactanos!</h2>
+    <aside>
+        <!--  <p>
+            We would <em>love</em> to hear from you! </p>-->
+        <p>Por favor, usa el <b><em>Formulario de incidencia</em></b> para enviar un mensaje.
+        </p>
+    </aside>
+
+    <!-- START HERE -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Style The Contact Form How Ever You Prefer -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">
+
+    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="toni.navarta@gmail.com" action="https://script.google.com/macros/s/AKfycbxaTv9i2Ua2qVS2CkESatCrS8cGHE_OPD57MWtS6DdVZCrG8G0U/exec">
+        <!-- change the form action to your script url -->
+
+        <fieldset class="pure-group">
+            <label for="referencia">Referencia: </label>
+            <input id="referencia" name="referencia" placeholder="Referencia del producto" />
+        </fieldset>
+        <fieldset class="pure-group">
+            <label for="serie">Serie: </label>
+            <input id="serie" name="serie" placeholder="Número de serie" />
+        </fieldset>
+        <fieldset class="pure-group">
+            <label for="ruta">Ruta:</label>
+            <select id="ruta" name="ruta">
+              <option selected>LARGA</option>
+              <option>LARGA</option>
+              <option>CORTA</option>
+              <option>CENTRO</option>
+              <option>BCN</option>
+            </select>
+        </fieldset>
+        <fieldset class="pure-group">
+            <label for="pedidos">Serie: </label>
+            <input id="pedidos" name="pedidos" placeholder="Pedidos afectados" />
+        </fieldset>
+        <fieldset class="pure-group">
+            <label for="tipo">Ruta:</label>
+            <select id="tipo" name="tipo">
+              <option selected>LARGA</option>
+              <option>NO HAY PRODUCTO EN ALMACÉN</option>
+              <option>PICOS DIFERENTES LOTES</option>
+              <option>DIFERENCIAS DE STOCK</option>
+              <option>PRODUCTO EN MAL ESTADO</option>
+              <option>PRODUCTO O LOTE NO CORRESPONDE CON STOCK</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="pure-group">
+            <label for="message">Incidencia: </label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe la incidencia"></textarea>
+        </fieldset>
+        <fieldset class="pure-group">
+            <label for="email"><em>Your</em> Email Address:</label>
+            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
+            <span id="email-invalid" style="display:none">
+            Must be a valid email address</span>
+        </fieldset>
+
+        <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Enviar</button>
+
+    </form>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div style="display:none;" id="thankyou_message">
+        <h2><em>Gracias!</em> Por reportarlo, pronto nos pondremos en contacto</h2>
+    </div>
+
+    <!-- Submit the Form to Google Using "AJAX"-->
+    <!-- <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>-->
+    <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    <!-- END -->
+
+</body>
+
+</html>
